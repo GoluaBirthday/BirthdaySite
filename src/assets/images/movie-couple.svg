@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffd9ba"/>
+      <stop offset="1" stop-color="#f9d8ec"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0" stop-color="#d9d0ff"/>
+      <stop offset="1" stop-color="#c7f2d0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" rx="20" fill="url(#g2)" opacity="0.9"/>
+  <rect x="60" y="28" width="480" height="120" rx="6" fill="#fff" opacity="0.95" />
+  <g opacity="0.22">
+    <rect x="80" y="40" width="120" height="80" rx="6" fill="#f6b1c9" />
+    <rect x="210" y="40" width="120" height="80" rx="6" fill="#ffd5d8" />
+    <rect x="340" y="40" width="120" height="80" rx="6" fill="#f0eaff" />
+  </g>
+  <g transform="translate(60,160)">
+    <rect x="0" y="0" width="480" height="140" rx="14" fill="#2e1b22" opacity="0.85" />
+    <g id="couple" transform="translate(120,18)">
+      <g id="him" transform="translate(0,0)">
+        <ellipse cx="40" cy="46" rx="28" ry="22" fill="#f2d6e0" />
+        <rect x="14" y="58" width="52" height="46" rx="10" fill="#6b4b57" />
+      </g>
+      <g id="her" transform="translate(110,0)">
+        <ellipse cx="40" cy="46" rx="26" ry="20" fill="#fce1e6" />
+        <rect x="12" y="58" width="48" height="46" rx="10" fill="#9a6b88" />
+      </g>
+      <path d="M-6 96 q80 36 164 0 q46 -20 92 0 v28 h-256 z" fill="url(#g1)" opacity="0.95" transform="translate(-4,0)" />
+    </g>
+    <g id="stars" fill="#ffd9ba" opacity="0.95">
+      <circle cx="60" cy="22" r="3" />
+      <circle cx="520" cy="18" r="2.5" />
+      <circle cx="480" cy="40" r="2" />
+    </g>
+  </g>
+</svg>

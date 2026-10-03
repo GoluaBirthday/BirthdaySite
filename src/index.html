@@ -1,0 +1,1396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#fff4ec" />
+    <meta
+      name="description"
+      content="A birthday story for Debjani, my Goluaa. Told the way we talk."
+    />
+    <title>Happy Birthday, Goluaa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="locked">
+    <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+    <div class="progress" aria-hidden="true"><i id="progress-bar"></i></div>
+
+    <!-- Gate -->
+    <div id="gate-screen" class="gate-screen">
+      <div class="gate-card">
+        <p class="hand">psst, before the surprise...</p>
+        <h1>Are you interested in the person who sent you this? 💕</h1>
+        <p class="gate-sub">
+          Choose wisely. "Yes" has been working out and is ready to grow.
+        </p>
+        <div class="choice-row">
+          <button id="choice-no" class="choice-btn choice-no" type="button">
+            No
+          </button>
+          <button id="choice-yes" class="choice-btn choice-yes" type="button">
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <audio id="bg-music" loop preload="auto">
+      <source src="assets/audio/song.mp3" type="audio/mpeg" />
+    </audio>
+    <button
+      id="music-toggle"
+      class="music-toggle"
+      type="button"
+      aria-label="Play music"
+    >
+      ▶ Play
+    </button>
+
+    <main id="gift-app" hidden>
+      <!-- HERO -->
+      <section class="chap hero" style="--b: var(--hero); --c: var(--hero-end)">
+        <div class="wrap hero-grid">
+          <div class="hero-copy rv">
+            <p class="hand tagline">Debjani Chatterjee · 9th October 🎂</p>
+            <h2 class="hero-title">
+              Happy Birthday,
+              <span>Goluaa! 🎉</span>
+            </h2>
+            <p class="hero-warn">
+              Warning: contains feelings, terrible jokes, and one (1) lovingly
+              roasted tummy. 😄
+            </p>
+            <p class="lead">
+              Fozu built you a tiny corner of the internet. Scroll slowly. It's
+              our story, told the way we talk: a little soft, a little silly,
+              and a lot of us.
+            </p>
+            <div class="cta-row">
+              <button class="btn btn-primary" id="start-story" type="button">
+                Start our story ↓
+              </button>
+              <button class="btn btn-ghost" id="skip-notes" type="button">
+                Skip to the love notes
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-photos rv">
+            <figure
+              class="polaroid hero-photo"
+              style="--r: 3deg"
+              data-title="The face that ruined me"
+              data-text="Positively. In the best way. Every single time."
+            >
+              <span class="tape"></span>
+              <div class="ph sketch">
+                <img
+                  src="assets/photos/last-her-7.jpg"
+                  alt="Debjani smiling on a terrace"
+                  data-photo
+                />
+              </div>
+              <figcaption>the face that ruined me (positively)</figcaption>
+            </figure>
+            <figure
+              class="polaroid hero-mini a"
+              style="--r: -9deg"
+              data-title="That look back"
+              data-text="Red, fairy lights, and one glance over the shoulder. I was done for."
+            >
+              <div class="ph">
+                <img
+                  src="assets/photos/pretty-15.jpg"
+                  alt="Debjani in red glancing back at the camera"
+                  data-photo
+                />
+              </div>
+            </figure>
+            <figure
+              class="polaroid hero-mini b"
+              style="--r: 8deg"
+              data-title="Saree day"
+              data-text="My brain: error 404, composure not found."
+            >
+              <div class="ph">
+                <img
+                  src="assets/photos/pretty-12.jpg"
+                  alt="Debjani in a green saree"
+                  data-photo
+                />
+              </div>
+            </figure>
+          </div>
+        </div>
+        <div class="scroll-cue" aria-hidden="true">scroll <span>↓</span></div>
+      </section>
+
+      <div
+        class="bridge"
+        style="--from: var(--hero-end); --to: var(--night-top)"
+      >
+        <span class="hand">⏪ rewind to the grey days...</span>
+      </div>
+
+      <!-- CH 1: GREY PATCH -->
+      <section
+        class="chap night"
+        style="
+          --b: var(--night-top);
+          --c: var(--night-end);
+          --ink: #f1eeff;
+          --panel: rgba(255, 255, 255, 0.07);
+          --panel-ink: #e6e2ff;
+        "
+      >
+        <div class="stars" id="stars" aria-hidden="true"></div>
+        <div class="wrap narrow">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Chapter 01</p>
+            <h2>The grey patch ☁️</h2>
+          </header>
+          <div class="panel rv">
+            <p>
+              Before you, life was heavy. Not dramatic-movie heavy. Just
+              quietly, stubbornly grey. The kind of season where you smile
+              because that's what people expect.
+            </p>
+            <p>
+              I wasn't looking for anything. Honestly, I wasn't even looking up.
+            </p>
+          </div>
+          <div class="ping rv">
+            <span class="ping-star" aria-hidden="true">✦</span>
+            <p class="hand">and then... ping.</p>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="bridge"
+        style="--from: var(--night-end); --to: var(--ping-top)"
+      ></div>
+
+      <!-- CH 2: PING -->
+      <section
+        class="chap ping-chap"
+        style="
+          --b: var(--ping-top);
+          --c: var(--ping-end);
+          --ink: #ffffff;
+          --panel: rgba(255, 255, 255, 0.82);
+          --panel-ink: #432b39;
+        "
+      >
+        <div class="wrap">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Chapter 02</p>
+            <h2>Ping. It's your birthday. 🎈</h2>
+          </header>
+
+          <div class="panel narrow-panel rv">
+            <p>
+              Your birthday, 2024. One hello. That's all it took. I started
+              trusting you, you started trusting me, slowly, the way you tiptoe
+              into a pool and then suddenly you're in the deep end.
+            </p>
+            <p>
+              We talked about everything. The extremely serious and the
+              extremely ridiculous, sometimes in the same breath.
+            </p>
+          </div>
+
+          <div class="chat-pair">
+            <div class="chat rv" aria-label="Chat: saying the same thing">
+              <p class="chat-title">the telepathy incident</p>
+              <div class="bubble them" style="--i: 0">
+                okay random but i was just thinking...
+              </div>
+              <div class="bubble me" style="--i: 0">
+                ...about the exact same thing. why
+              </div>
+              <div class="bubble them" style="--i: 1">stop doing that 😭</div>
+              <div class="bubble me" style="--i: 1">no YOU stop 😭</div>
+              <p class="chat-cap">
+                Both of us. Same words. Same second. Our telepathy has no off
+                switch.
+              </p>
+            </div>
+
+            <div class="chat rv" aria-label="Chat: catfishing for compliments">
+              <p class="chat-title">the catfishing incident</p>
+              <div class="bubble them photo-bubble" style="--i: 0">
+                <figure class="polaroid mini" style="--r: -2deg">
+                  <div class="ph">
+                    <img
+                      src="assets/photos/pretty-4.jpg"
+                      alt="Debjani, claiming she looks bad"
+                      data-photo
+                    />
+                  </div>
+                </figure>
+                ugh i look so bad today 🙈
+              </div>
+              <div class="bubble me" style="--i: 1">
+                Ma'am. Delete the sentence. Not the photo, the sentence.
+              </div>
+              <div class="bubble them" style="--i: 2">
+                so... do i look okay? 🥺
+              </div>
+              <div class="bubble me" style="--i: 3">
+                You look like the reason sunsets try so hard.
+              </div>
+              <div class="bubble them" style="--i: 4">hehe 😌</div>
+              <p class="chat-cap">
+                Catfishing for compliments. Success rate: 100%. I fall for it
+                every single time, and I'd happily do it again.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="bridge"
+        style="--from: var(--ping-end); --to: var(--feel-top)"
+      ></div>
+
+      <!-- CH 3: FEELINGS -->
+      <section
+        class="chap feel"
+        style="
+          --b: var(--feel-top);
+          --c: var(--feel-end);
+          --ink: #432b39;
+          --panel: rgba(255, 255, 255, 0.72);
+          --panel-ink: #432b39;
+        "
+      >
+        <div class="wrap narrow">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Chapter 03</p>
+            <h2>Caught feelings. Mutually. No refunds. 💞</h2>
+          </header>
+          <div class="panel rv">
+            <p>
+              Somewhere between the memes and the midnight talks, I grew a soft
+              corner for you. Then you grew one for me. We looked at each other
+              (digitally) and said: well, this is happening.
+            </p>
+            <p>
+              You didn't "fix" me. You just turned the lights on, one
+              conversation at a time, until the grey had nowhere left to hide.
+            </p>
+          </div>
+
+          <div class="stats rv">
+            <div>
+              <b id="days-count" data-since="2024-10-09">730</b>
+              <span>days of talking since your 2024 birthday</span>
+            </div>
+            <div>
+              <b>0</b>
+              <span>fights. Not one. Suspiciously healthy.</span>
+            </div>
+            <div>
+              <b>∞</b>
+              <span>memes exchanged, give or take a few reels</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="bridge"
+        style="--from: var(--feel-end); --to: var(--cinema-top)"
+      >
+        <span class="hand">🎬 date night loading...</span>
+      </div>
+
+      <!-- CH 4: CINEMA -->
+      <section
+        class="chap cinema"
+        style="
+          --b: var(--cinema-top);
+          --c: var(--cinema-end);
+          --ink: #ffe9d6;
+          --panel: rgba(255, 255, 255, 0.08);
+          --panel-ink: #ffe9d6;
+        "
+      >
+        <div class="wrap">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Chapter 04 · Date #1 · Nov 2024</p>
+            <h2>Lunch, a movie, and zero attention paid to the movie 🍿</h2>
+          </header>
+
+          <div class="cinema-grid">
+            <div class="panel rv">
+              <p>
+                I was leaving the city in a few days, so we did the only
+                sensible thing: we met. Lunch first. Then a movie.
+              </p>
+              <p>
+                We were so comfortable around each other it was almost
+                suspicious. And somewhere between the trailers and the credits,
+                we had our first kiss. I remember thinking: oh. This one's a
+                gem. I found a gem.
+              </p>
+            </div>
+
+            <svg
+              class="cinema-svg rv"
+              viewBox="0 0 600 340"
+              role="img"
+              aria-label="Animated illustration of two people sitting close in a cinema"
+            >
+              <defs>
+                <linearGradient id="screen" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#ffd9ba" />
+                  <stop offset="0.5" stop-color="#f9a8c6" />
+                  <stop offset="1" stop-color="#b9a7ff" />
+                </linearGradient>
+                <radialGradient id="glow" cx="50%" cy="0%" r="90%">
+                  <stop offset="0" stop-color="#ffd9ba" stop-opacity="0.55" />
+                  <stop offset="1" stop-color="#ffd9ba" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <rect width="600" height="340" rx="18" fill="#1b0610" />
+              <polygon
+                points="110,160 490,160 590,330 10,330"
+                fill="url(#glow)"
+              />
+              <rect
+                x="120"
+                y="22"
+                width="360"
+                height="136"
+                rx="8"
+                fill="url(#screen)"
+              >
+                <animate
+                  attributeName="opacity"
+                  values="0.88;1;0.9;1;0.86"
+                  dur="3s"
+                  repeatCount="indefinite"
+                />
+              </rect>
+              <text
+                x="300"
+                y="104"
+                text-anchor="middle"
+                font-size="40"
+                font-family="serif"
+                fill="#432b39"
+                opacity="0.8"
+              >
+                ♥
+              </text>
+              <!-- seat rows -->
+              <g fill="#3b0d1f">
+                <rect x="20" y="262" width="70" height="70" rx="14" />
+                <rect x="110" y="262" width="70" height="70" rx="14" />
+                <rect x="420" y="262" width="70" height="70" rx="14" />
+                <rect x="510" y="262" width="70" height="70" rx="14" />
+                <rect x="190" y="262" width="100" height="70" rx="16" />
+                <rect x="310" y="262" width="100" height="70" rx="16" />
+              </g>
+              <!-- him -->
+              <g>
+                <path
+                  d="M205 290 q0 -34 40 -34 q40 0 40 34 z"
+                  fill="#2a1520"
+                  stroke="#ffd9ba"
+                  stroke-opacity="0.45"
+                />
+                <circle
+                  cx="245"
+                  cy="232"
+                  r="24"
+                  fill="#2a1520"
+                  stroke="#ffd9ba"
+                  stroke-opacity="0.55"
+                />
+                <path
+                  d="M222 226 q23 -22 46 0 q-4 -16 -23 -17 q-19 1 -23 17z"
+                  fill="#150a10"
+                />
+              </g>
+              <!-- her, leaning in -->
+              <g>
+                <animateTransform
+                  attributeName="transform"
+                  type="rotate"
+                  values="-3 355 290;-9 355 290;-3 355 290"
+                  dur="4s"
+                  repeatCount="indefinite"
+                />
+                <path
+                  d="M315 290 q0 -34 40 -34 q40 0 40 34 z"
+                  fill="#4a1630"
+                  stroke="#ffd9ba"
+                  stroke-opacity="0.45"
+                />
+                <path
+                  d="M327 230 q0 -28 28 -28 q28 0 28 28 l4 58 l-20 0 l-6 -40 l-24 0 l-6 40 l-20 0 z"
+                  fill="#1e0a14"
+                />
+                <circle
+                  cx="355"
+                  cy="234"
+                  r="22"
+                  fill="#5a2038"
+                  stroke="#ffd9ba"
+                  stroke-opacity="0.55"
+                />
+                <path
+                  d="M333 228 q22 -26 44 0 q-4 -14 -22 -15 q-18 1 -22 15z"
+                  fill="#1e0a14"
+                />
+              </g>
+              <!-- floating hearts -->
+              <g font-size="20" fill="#f082ac" text-anchor="middle">
+                <text x="300" y="240">
+                  ♥
+                  <animate
+                    attributeName="y"
+                    values="240;170"
+                    dur="3.2s"
+                    repeatCount="indefinite"
+                  />
+                  <animate
+                    attributeName="opacity"
+                    values="0;1;0"
+                    dur="3.2s"
+                    repeatCount="indefinite"
+                  />
+                </text>
+                <text x="280" y="240" font-size="14">
+                  ♥
+                  <animate
+                    attributeName="y"
+                    values="240;180"
+                    dur="3.2s"
+                    begin="1s"
+                    repeatCount="indefinite"
+                  />
+                  <animate
+                    attributeName="opacity"
+                    values="0;1;0"
+                    dur="3.2s"
+                    begin="1s"
+                    repeatCount="indefinite"
+                  />
+                </text>
+                <text x="325" y="240" font-size="12">
+                  ♥
+                  <animate
+                    attributeName="y"
+                    values="240;190"
+                    dur="3.2s"
+                    begin="2s"
+                    repeatCount="indefinite"
+                  />
+                  <animate
+                    attributeName="opacity"
+                    values="0;1;0"
+                    dur="3.2s"
+                    begin="2s"
+                    repeatCount="indefinite"
+                  />
+                </text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="ticket-row rv">
+            <div class="ticket">
+              <div class="ticket-main">
+                <p class="ticket-k">ADMIT TWO</p>
+                <p><b>Film:</b> something. I wasn't watching.</p>
+                <p><b>Seats:</b> very, very close</p>
+                <p><b>Plot:</b> you.</p>
+              </div>
+              <div class="ticket-stub">№ 1</div>
+            </div>
+            <p class="aside">
+              Photos of us from this day: zero. Photos of you: only these two,
+              and I treasure both. So in my memory, you're in every frame.
+            </p>
+          </div>
+
+          <div class="duo rv">
+            <figure
+              class="polaroid"
+              style="--r: -3deg"
+              data-title="First date, standing there like a movie poster"
+              data-text="Lunch, colourful doors, and me trying very hard to look like I wasn't staring."
+            >
+              <span class="tape"></span>
+              <div class="ph tall-focus">
+                <img
+                  src="assets/photos/first-her-1.jpg"
+                  alt="Debjani at the first lunch"
+                  data-photo
+                />
+              </div>
+              <figcaption>lunch, before the movie</figcaption>
+            </figure>
+            <figure
+              class="polaroid"
+              style="--r: 3deg"
+              data-title="Chin on hand, heart in mine"
+              data-text="This is the exact moment I thought: oh no. Oh yes. Oh no."
+            >
+              <span class="tape"></span>
+              <div class="ph">
+                <img
+                  src="assets/photos/first-her-2.jpg"
+                  alt="Debjani smiling, chin on hand"
+                  data-photo
+                />
+              </div>
+              <figcaption>the "oh no, oh yes" moment</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="bridge"
+        style="--from: var(--cinema-end); --to: var(--ganges-top)"
+      >
+        <span class="hand">🌅 golden hour...</span>
+      </div>
+
+      <!-- CH 5: GANGES -->
+      <section
+        class="chap ganges"
+        style="
+          --b: var(--ganges-top);
+          --c: var(--ganges-end);
+          --ink: #3d1f2b;
+          --panel: rgba(255, 255, 255, 0.78);
+          --panel-ink: #432b39;
+        "
+      >
+        <div class="sun" aria-hidden="true"></div>
+        <div class="wrap">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Chapter 05 · Date #2 · Nov 2024</p>
+            <h2>Golden hour by the Ganges 🌊</h2>
+          </header>
+          <div class="unlock-row rv">
+            <button class="btn btn-ghost unlock-all" type="button">
+              🔓 Unlock all photos of us
+            </button>
+          </div>
+          <div class="split">
+            <div class="panel rv">
+              <p>
+                I was about to leave, but we weren't done. So: round two. An
+                evening by the Ganges, a café full of our little moments, and a
+                ridiculous number of photos.
+              </p>
+              <p>
+                The goodbye felt less like "bye" and more like "see you soon,
+                please."
+              </p>
+              <p class="aside-in">
+                We clicked so many pictures that the river probably filed a
+                complaint.
+              </p>
+            </div>
+            <figure
+              class="polaroid rv"
+              style="--r: -3deg"
+              data-title="By the Ganges"
+              data-text="The sky did its thing, you did yours, and I forgot how to look anywhere else."
+            >
+              <span class="tape"></span>
+              <div class="ph">
+                <img
+                  src="assets/photos/second-us-1.jpg"
+                  alt="Debjani and me by the river"
+                  data-photo
+                />
+              </div>
+              <figcaption>date #2: the river, the café, us</figcaption>
+            </figure>
+          </div>
+
+          <div class="trio">
+            <figure
+              class="polaroid rv"
+              style="--r: -2deg"
+              data-title="Lights on the water"
+              data-text="The river had lights. You had a better glow."
+            >
+              <div class="ph">
+                <img
+                  src="assets/photos/second-her-1.jpg"
+                  alt="Debjani by the river at night"
+                  data-photo
+                />
+              </div>
+              <figcaption>you, with the river behind</figcaption>
+            </figure>
+            <figure
+              class="polaroid rv"
+              style="--r: 2deg"
+              data-title="Café selfie"
+              data-text="Purple light, tilted heads, two very happy people."
+            >
+              <div class="ph">
+                <img
+                  src="assets/photos/second-us-2.jpg"
+                  alt="Debjani and me leaning in"
+                  data-photo
+                />
+              </div>
+              <figcaption>café selfie (very tilted, very happy)</figcaption>
+            </figure>
+            <figure
+              class="polaroid rv"
+              style="--r: -1.5deg"
+              data-title="Heads together"
+              data-text="Pretty sure the river filed a complaint about how many photos we took."
+            >
+              <div class="ph">
+                <img
+                  src="assets/photos/second-us-3.jpg"
+                  alt="Debjani and me smiling"
+                  data-photo
+                />
+              </div>
+              <figcaption>photo #47 of the evening</figcaption>
+            </figure>
+          </div>
+        </div>
+        <svg
+          class="waves"
+          viewBox="0 0 1200 80"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M0 40 Q150 0 300 40 T600 40 T900 40 T1200 40 V80 H0z"
+            fill="rgba(255,255,255,0.28)"
+          />
+        </svg>
+      </section>
+
+      <div
+        class="bridge"
+        style="--from: var(--ganges-end); --to: var(--dist-top)"
+      >
+        <span class="hand">✈ then the plot twist...</span>
+      </div>
+
+      <!-- CH 6: DISTANCE -->
+      <section
+        class="chap dist"
+        style="
+          --b: var(--dist-top);
+          --c: var(--dist-end);
+          --ink: #2d3560;
+          --panel: rgba(255, 255, 255, 0.8);
+          --panel-ink: #3a3350;
+        "
+      >
+        <div class="wrap">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Chapter 06</p>
+            <h2>Mysore ↔ Kolkata ↔ Siuri</h2>
+          </header>
+
+          <div class="split">
+            <div class="panel rv">
+              <p>
+                Then I went to Mysore. You were in Kolkata. Overnight we became
+                a long-distance couple, which is, bluntly, the worst. But you
+                made it smaller. You showed up every day with that face of
+                yours, kept me entertained, and we counted down to the reunion
+                like kids before a festival.
+              </p>
+              <p>
+                A couple of months later I made it back. A few dates, a lot of
+                grinning. Then I had to leave again, and by the time I returned
+                you had moved back to Siuri. Round three of distance.
+              </p>
+              <p>
+                And still, not a single fight. We just... cherish each other.
+                It's annoyingly healthy.
+              </p>
+            </div>
+
+            <div class="map-card rv">
+              <svg
+                viewBox="0 0 600 380"
+                role="img"
+                aria-label="Route from Mysore to Kolkata to Siuri"
+              >
+                <defs>
+                  <linearGradient id="route" x1="0" x2="1">
+                    <stop offset="0" stop-color="#f082ac" />
+                    <stop offset="1" stop-color="#7c6cf0" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M120 40 Q330 10 520 70 Q560 160 480 230 Q380 300 250 350 Q180 360 150 300 Q100 200 120 40z"
+                  fill="#ffffff"
+                  opacity="0.5"
+                />
+                <path
+                  id="flight"
+                  d="M170 305 Q250 110 455 175"
+                  fill="none"
+                  stroke="url(#route)"
+                  stroke-width="4"
+                  stroke-dasharray="3 10"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M455 175 Q445 135 420 110"
+                  fill="none"
+                  stroke="#7c6cf0"
+                  stroke-width="4"
+                  stroke-dasharray="3 10"
+                  stroke-linecap="round"
+                />
+                <g class="pin">
+                  <circle cx="170" cy="305" r="9" fill="#f082ac" />
+                  <text x="170" y="337" text-anchor="middle">Mysore</text>
+                </g>
+                <g class="pin">
+                  <circle cx="455" cy="175" r="9" fill="#f082ac" />
+                  <text x="500" y="200" text-anchor="middle">Kolkata</text>
+                </g>
+                <g class="pin">
+                  <circle cx="420" cy="110" r="9" fill="#7c6cf0" />
+                  <text x="420" y="92" text-anchor="middle">Siuri</text>
+                </g>
+                <text font-size="26">
+                  ✈
+                  <animateMotion
+                    dur="6s"
+                    repeatCount="indefinite"
+                    rotate="auto"
+                  >
+                    <mpath href="#flight" />
+                  </animateMotion>
+                </text>
+              </svg>
+              <p class="map-cap hand">distance: temporary. us: not.</p>
+            </div>
+          </div>
+
+          <div class="reunion">
+            <header class="sub-head rv">
+              <p class="chap-num hand">Dates #3 &amp; #4 · January 2025</p>
+              <h3>The reunion tour 🤗</h3>
+              <p class="aside">
+                I came back. You wore the flower top. I forgot my own name. 🌸
+              </p>
+            </header>
+            <div class="unlock-row rv">
+              <button class="btn btn-ghost unlock-all" type="button">
+                🔓 Unlock all photos of us
+              </button>
+            </div>
+            <div class="photo-grid">
+              <figure
+                class="polaroid rv"
+                style="--r: -2deg"
+                data-title="Third date, together"
+                data-text="Two months of waiting, and then you were right there, grinning at my camera."
+              >
+                <span class="tape"></span>
+                <div class="ph">
+                  <img
+                    src="assets/photos/third-us-1.jpg"
+                    alt="Debjani and me, third date"
+                    data-photo
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>date #3: we're back!</figcaption>
+              </figure>
+              <figure
+                class="polaroid rv"
+                style="--r: 2.5deg"
+                data-title="Third date, selfie"
+                data-text="You lean in, I forget how cameras work."
+              >
+                <span class="tape"></span>
+                <div class="ph">
+                  <img
+                    src="assets/photos/third-us-2.jpg"
+                    alt="Debjani and me, selfie"
+                    data-photo
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>selfie with a very smug me</figcaption>
+              </figure>
+              <figure
+                class="polaroid rv"
+                style="--r: -2deg"
+                data-title="On the bench"
+                data-text="Chin on hand. Cuteness unreasonable."
+              >
+                <div class="ph">
+                  <img
+                    src="assets/photos/third-her-2.jpg"
+                    alt="Debjani on a bench"
+                    data-photo
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>bench, chin, doom</figcaption>
+              </figure>
+              <figure
+                class="polaroid rv"
+                style="--r: 2deg"
+                data-title="Just lounging"
+                data-text="Lounging like it's your job. You're very good at it."
+              >
+                <div class="ph">
+                  <img
+                    src="assets/photos/third-her-1.jpg"
+                    alt="Debjani relaxing on a bench"
+                    data-photo
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>professional bench-sitter</figcaption>
+              </figure>
+              <figure
+                class="polaroid rv"
+                style="--r: -1.5deg"
+                data-title="Walking pose"
+                data-text="The 'don't look at the camera' look, but I'm looking at you."
+              >
+                <div class="ph">
+                  <img
+                    src="assets/photos/third-her-3.jpg"
+                    alt="Debjani standing on a walkway"
+                    data-photo
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>the evening stroll</figcaption>
+              </figure>
+              <figure
+                class="polaroid rv"
+                style="--r: 2deg"
+                data-title="Mall bench"
+                data-text="City lights above, you below, my heart everywhere."
+              >
+                <div class="ph">
+                  <img
+                    src="assets/photos/third-her-4.jpg"
+                    alt="Debjani sitting by a mall"
+                    data-photo
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>golden hour, pink top</figcaption>
+              </figure>
+              <figure
+                class="polaroid rv"
+                style="--r: -3deg"
+                data-title="Date #4"
+                data-text="The mirror selfie that proves I had my arms around you."
+              >
+                <span class="tape"></span>
+                <div class="ph">
+                  <img
+                    src="assets/photos/fourth-us-1.jpg"
+                    alt="Debjani and me in a mirror selfie"
+                    data-photo
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>date #4: the mirror selfie</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="bridge"
+        style="--from: var(--dist-end); --to: var(--shoulder-top)"
+      ></div>
+
+      <!-- CH 7: SHOULDER -->
+      <section
+        class="chap shoulder"
+        style="
+          --b: var(--shoulder-top);
+          --c: var(--shoulder-end);
+          --ink: #432b39;
+          --panel: rgba(255, 255, 255, 0.78);
+          --panel-ink: #432b39;
+        "
+      >
+        <div class="wrap narrow center">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Chapter 07</p>
+            <h2>The ride home 🤍</h2>
+          </header>
+          <svg class="shoulder-svg rv" viewBox="0 0 220 140" aria-hidden="true">
+            <path d="M20 140 q0 -50 40 -50 q40 0 40 50z" fill="#432b39" />
+            <circle cx="60" cy="62" r="24" fill="#432b39" />
+            <path d="M120 140 q0 -50 40 -50 q40 0 40 50z" fill="#f082ac" />
+            <g>
+              <animateTransform
+                attributeName="transform"
+                type="rotate"
+                values="0 100 100;-4 100 100;0 100 100"
+                dur="4s"
+                repeatCount="indefinite"
+              />
+              <circle cx="100" cy="66" r="22" fill="#f6b8c8" />
+              <path
+                d="M78 62 q22 -30 44 0 q4 34 -4 54 q-14 -8 -14 -40 q-12 6 -26 2z"
+                fill="#432b39"
+              />
+            </g>
+            <path
+              d="M40 112 q60 22 130 -4"
+              stroke="#432b39"
+              stroke-width="10"
+              stroke-linecap="round"
+              fill="none"
+              opacity="0.85"
+            />
+          </svg>
+          <div class="panel rv">
+            <p>
+              One of my favourite small moments: travelling home together, your
+              head dropped onto my shoulder, my arms wrapped around you, and the
+              whole world just... paused.
+            </p>
+            <p>
+              No plan, no photos, nothing to prove. Just the best seat in the
+              house: my shoulder, permanently reserved for you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="bridge"
+        style="--from: var(--shoulder-end); --to: var(--jan-top)"
+      ></div>
+
+      <!-- CH 8: JANUARY -->
+      <section
+        class="chap jan"
+        style="
+          --b: var(--jan-top);
+          --c: var(--jan-end);
+          --ink: #4a2a1f;
+          --panel: rgba(255, 255, 255, 0.76);
+          --panel-ink: #432b39;
+        "
+      >
+        <div class="wrap">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Chapter 08 · Date #5 · January 2026</p>
+            <h2>One day. You moved mountains for it. ⛰️</h2>
+          </header>
+          <div class="unlock-row rv">
+            <button class="btn btn-ghost unlock-all" type="button">
+              🔓 Unlock all photos of us
+            </button>
+          </div>
+          <div class="split">
+            <div class="panel rv">
+              <p>
+                You put in all your effort to be with me for one day. One. And
+                we stuck to each other like we could store it up, because we
+                both knew the next hello would be a long way off.
+              </p>
+              <p>A kiss. A goodbye. A promise to do it again.</p>
+              <div class="hug">
+                <span class="hand">next hug loading...</span>
+                <div class="hug-bar"><i></i></div>
+                <small
+                  >Estimated arrival: unknown. Excitement: fully charged.</small
+                >
+              </div>
+            </div>
+            <figure
+              class="polaroid rv"
+              style="--r: -2deg"
+              data-title="Date #5: the last meet"
+              data-text="One day, held a little tighter than usual."
+            >
+              <span class="tape"></span>
+              <div class="ph">
+                <img
+                  src="assets/photos/last-us-2.jpg"
+                  alt="Debjani and me at a café table"
+                  data-photo
+                />
+              </div>
+              <figcaption>date #5: the one day</figcaption>
+            </figure>
+          </div>
+
+          <div class="trio">
+            <figure
+              class="polaroid rv"
+              style="--r: 2deg"
+              data-title="Standing together"
+              data-text="Side by side, in front of a wall that has no idea how lucky it is."
+            >
+              <div class="ph">
+                <img
+                  src="assets/photos/last-us-3.jpg"
+                  alt="Debjani and me standing together"
+                  data-photo
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>us, standing very still for once</figcaption>
+            </figure>
+            <figure
+              class="polaroid rv"
+              style="--r: -2deg"
+              data-title="Close"
+              data-text="Closer. Hold on. A little closer."
+            >
+              <div class="ph sketch">
+                <img
+                  src="assets/photos/last-us-1.jpg"
+                  alt="Debjani and me close together"
+                  data-photo
+                  loading="lazy"
+                />
+                <img
+                  class="sketch-layer"
+                  src="assets/doodle-couple.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </div>
+              <figcaption>sketched, then coloured in</figcaption>
+            </figure>
+            <figure
+              class="polaroid locked rv"
+              style="--r: 2.5deg"
+              data-title="Just for us"
+              data-text="Some memories are not for the whole internet. This one is for you and me."
+            >
+              <div class="ph">
+                <img
+                  src="assets/photos/last-private.jpg"
+                  alt="A private photo of Debjani and me"
+                  data-photo
+                  loading="lazy"
+                />
+                <span class="lock"
+                  ><b>🔒</b>just for us<small>tap to unlock</small></span
+                >
+              </div>
+              <figcaption>top secret (Goluaa only)</figcaption>
+            </figure>
+          </div>
+
+          <header class="sub-head rv">
+            <p class="aside">
+              And you, all day long. Twelve photos, zero bad ones. (Swipe.)
+            </p>
+          </header>
+          <div
+            class="strip"
+            id="strip-last"
+            data-count="12"
+            data-prefix="last-her-"
+            data-label="frame"
+          ></div>
+        </div>
+      </section>
+
+      <div
+        class="bridge"
+        style="--from: var(--jan-end); --to: var(--review-top)"
+      ></div>
+
+      <!-- INTERLUDE: REVIEW -->
+      <section
+        class="chap review"
+        style="
+          --b: var(--review-top);
+          --c: var(--review-end);
+          --ink: #432b39;
+          --panel: #ffffff;
+          --panel-ink: #432b39;
+        "
+      >
+        <div class="wrap narrow">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Interlude</p>
+            <h2>A very official product review ⭐</h2>
+          </header>
+          <article class="review-card rv">
+            <div class="tyre" aria-hidden="true"></div>
+            <div>
+              <p class="review-k">Product: Goluaa's tummy (aka "MRF Tyres")</p>
+              <p class="review-row"><span>Grip</span><span>★★★★★</span></p>
+              <p class="review-row">
+                <span>Cuddle compatibility</span><span>★★★★★</span>
+              </p>
+              <p class="review-row">
+                <span>Mileage</span><span>unlimited</span>
+              </p>
+              <p class="review-row">
+                <span>Refund policy</span><span>lol no</span>
+              </p>
+              <p class="review-verdict">
+                Verdict: would not trade for any other model.
+              </p>
+              <small>
+                (All jokes. All love. Do not change a thing. The tyres are my
+                favourite part.)
+              </small>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section
+        class="chap gallery"
+        style="
+          --b: var(--review-end);
+          --c: var(--gallery-end);
+          --ink: #432b39;
+          --panel: #ffffff;
+          --panel-ink: #432b39;
+        "
+      >
+        <div class="wrap">
+          <header class="chap-head rv">
+            <p class="chap-num hand">The evidence room</p>
+            <h2>Exhibits A to O: you look perfect 📸</h2>
+            <p class="aside">
+              (You said you didn't. The court disagrees. Swipe, tap a photo.)
+            </p>
+          </header>
+        </div>
+        <div
+          class="strip big"
+          id="strip-exhibits"
+          data-count="15"
+          data-prefix="pretty-"
+          data-label="exhibit"
+        ></div>
+      </section>
+
+      <!-- NOTES -->
+      <section
+        class="chap notes"
+        id="love-notes"
+        style="
+          --b: var(--notes-top);
+          --c: var(--notes-end);
+          --ink: #432b39;
+          --panel: #fff;
+          --panel-ink: #432b39;
+        "
+      >
+        <div class="wrap">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Sticky notes from my heart</p>
+            <h2>Things I keep meaning to say 📝</h2>
+          </header>
+          <div class="note-wall">
+            <p class="note rv" style="--r: -2deg; --bg: #fff3a8">
+              You say "I don't look good" and then send a photo. I need a new
+              vocabulary.
+            </p>
+            <p class="note rv" style="--r: 1.5deg; --bg: #ffd1e1">
+              We say the same thing at the same second so often that I'm no
+              longer surprised. I'm just impressed.
+            </p>
+            <p class="note rv" style="--r: -1deg; --bg: #d4f3e2">
+              Thank you for the days I didn't know how to ask for help and you
+              showed up anyway.
+            </p>
+            <p class="note rv" style="--r: 2.5deg; --bg: #e3dcff">
+              Your head on my shoulder is the best place in the world. Nothing
+              else is even in the top 100.
+            </p>
+            <p class="note rv" style="--r: -2.5deg; --bg: #ffe0c2">
+              Mysore, Kolkata, Siuri. Not a map. My route to happy. 🗺️
+            </p>
+            <p class="note rv" style="--r: 1deg; --bg: #cfeaff">
+              Never fought once. Either we're perfect or I'm scared of you.
+              Probably both. 😅
+            </p>
+            <p class="note rv" style="--r: -1.5deg; --bg: #ffd1e1">
+              I tease you, you tease me back, and somehow it always ends in "I
+              love you." Best game ever invented.
+            </p>
+            <p class="note rv" style="--r: 2deg; --bg: #fff3a8">
+              The moment I hold your hand, everything heavy in me goes quiet.
+              Birthday wish: many more hands held, and never letting go. 🤍
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="bridge"
+        style="--from: var(--notes-end); --to: var(--final-top)"
+      ></div>
+
+      <!-- FINALE -->
+      <section
+        class="chap finale"
+        style="
+          --b: var(--final-top);
+          --c: var(--final-end);
+          --ink: #432b39;
+          --panel: rgba(255, 255, 255, 0.82);
+          --panel-ink: #432b39;
+        "
+      >
+        <div class="wrap narrow center">
+          <header class="chap-head rv">
+            <p class="chap-num hand">Open when...</p>
+            <h2>Three little envelopes 💌</h2>
+          </header>
+          <div class="envelopes rv">
+            <button class="envelope" type="button" aria-expanded="false">
+              <span class="env-top">💌 Open when you miss me</span>
+              <span class="env-body">
+                Look at your shoulder. Now imagine it's mine. Wait, that's
+                backwards. Imagine your head's on it. There. I'm counting the
+                days till it's real.
+              </span>
+            </button>
+            <button class="envelope" type="button" aria-expanded="false">
+              <span class="env-top">🥺 Open when you doubt yourself</span>
+              <span class="env-body">
+                Every time you don't believe in yourself, I do. Enough for both
+                of us. You're going to do great things, and I'll be right here
+                cheering the loudest. 🌟
+              </span>
+            </button>
+            <button class="envelope" type="button" aria-expanded="false">
+              <span class="env-top">😂 Open when you need a laugh</span>
+              <span class="env-body">
+                Roses are red, MRF tyres are black. Tell me you miss me and I'll
+                come right back.
+              </span>
+            </button>
+          </div>
+
+          <div class="letter rv">
+            <button
+              class="sketch-circle"
+              id="sketch-circle"
+              type="button"
+              aria-label="Tap to colour in the sketch"
+            >
+              <img src="assets/photos/pretty-7.jpg" alt="Debjani in red" />
+            </button>
+            <p class="hand circle-hint">tap to colour her in</p>
+            <p class="eyebrow">Happy Birthday 🎉</p>
+            <h2>Debjani, my Goluaaa 👑</h2>
+            <p>
+              From your first birthday message to café evenings by the river and
+              goodbyes that only made my heart grow fonder, you've been the
+              warmest, funniest, softest place I know. You walked into my grey
+              and made it golden.
+            </p>
+            <p>
+              You are special, Goluaa, not in a "birthday card" way, but in a
+              real, quiet, every-single-day way. You're a genuinely good human:
+              kind without trying, funny without noticing, and brave in the soft
+              ways that matter most. The world is a little warmer because you're
+              in it, and my life is a lot warmer. I love you, for your whole
+              heart and every gloriously imperfect little bit of you.
+            </p>
+
+            <div class="cake">
+              <div
+                class="candle"
+                id="candle"
+                role="button"
+                tabindex="0"
+                aria-label="Blow out the candle"
+              >
+                <i class="flame"></i>
+              </div>
+              <div class="cake-body"></div>
+            </div>
+            <p class="hand cake-hint" id="cake-hint">
+              make a wish 🌟, then tap the candle
+            </p>
+
+            <p class="signature">Forever your Fozu · always, my Goluaaa 🤍</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="unlock-modal" class="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close="true"></div>
+      <div
+        class="confirm-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="unlock-title"
+      >
+        <p class="confirm-icon" aria-hidden="true">🔒</p>
+        <h3 id="unlock-title">Just for us</h3>
+        <p>This one is private. Ready to unlock it?</p>
+        <div class="confirm-actions">
+          <button id="unlock-no" class="btn btn-ghost" type="button">
+            Not yet
+          </button>
+          <button id="unlock-yes" class="btn btn-primary" type="button">
+            Unlock 💕
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <div class="lightbox-backdrop" data-close="true"></div>
+      <div
+        class="lightbox-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="lightbox-title"
+      >
+        <button class="lightbox-close" type="button" aria-label="Close">
+          ×
+        </button>
+        <img id="lightbox-image" alt="" />
+        <div class="lightbox-body">
+          <h3 id="lightbox-title"></h3>
+          <p id="lightbox-text"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
